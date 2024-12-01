@@ -1,0 +1,12 @@
+[submodule "eurekaserver-goodfood"]
+	path = eurekaserver-goodfood
+	url = git@github.com:RodrigoFernandes79/eureka-service-for-MS-goodfood.git
+[submodule "API-Gateway-goodfood"]
+	path = API-Gateway-goodfood
+	url = git@github.com:RodrigoFernandes79/Gateway-API-for-Goodfood-Microsserivce.git
+[submodule "Orders-microsservice-goodfood"]
+	path = Orders-microsservice-goodfood
+	url = git@github.com:RodrigoFernandes79/GoodFood-Orders-Microsservice.git
+[submodule "Payments-microsservice-goodfood"]
+	path = Payments-microsservice-goodfood
+	url = git@github.com:RodrigoFernandes79/GoodFood-Payments-Microsservice.git
