@@ -7,6 +7,6 @@
 [submodule "Orders-microsservice-goodfood"]
 	path = Orders-microsservice-goodfood
 	url = git@github.com:RodrigoFernandes79/GoodFood-Orders-Microsservice.git
-[submodule "Payments-microsservice-goodfood"]
-	path = Payments-microsservice-goodfood
+[submodule "GoodFood-Payments-Microsservice"]
+	path = GoodFood-Payments-Microsservice
 	url = git@github.com:RodrigoFernandes79/GoodFood-Payments-Microsservice.git
