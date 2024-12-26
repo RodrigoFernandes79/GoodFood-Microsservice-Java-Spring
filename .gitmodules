@@ -4,9 +4,9 @@
 [submodule "API-Gateway-goodfood"]
 	path = API-Gateway-goodfood
 	url = git@github.com:RodrigoFernandes79/Gateway-API-for-Goodfood-Microsserivce.git
-[submodule "Orders-microsservice-goodfood"]
-	path = Orders-microsservice-goodfood
-	url = git@github.com:RodrigoFernandes79/GoodFood-Orders-Microsservice.git
 [submodule "GoodFood-Payments-Microsservice"]
 	path = GoodFood-Payments-Microsservice
 	url = git@github.com:RodrigoFernandes79/GoodFood-Payments-Microsservice.git
+[submodule "GoodFood-Orders-Microsservice"]
+	path = GoodFood-Orders-Microsservice
+	url = git@github.com:RodrigoFernandes79/GoodFood-Orders-Microsservice.git
