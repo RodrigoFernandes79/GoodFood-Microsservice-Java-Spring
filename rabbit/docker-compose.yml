@@ -1,0 +1,15 @@
+version: "3.6" 
+ 
+services: 
+  rabbitmq: 
+    image: rabbitmq:3-management
+    container_name: rabbitmq 
+    restart: always 
+    ports: 
+      - 5672:5672  # Porta para conexões do RabbitMQ 
+      - 15672:15672  # Porta para a interface de gerenciamento 
+    volumes: 
+      - ./data/rabbitmq:/var/lib/rabbitmq/mnesia  # Persistência de dados 
+    environment: 
+      - RABBITMQ_DEFAULT_USER=rodrigo # Usuário padrão 
+      - RABBITMQ_DEFAULT_PASS=1312 # Senha padrãpp
