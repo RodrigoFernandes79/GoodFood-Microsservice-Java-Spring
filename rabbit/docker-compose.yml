@@ -1,15 +1,56 @@
-version: "3.6" 
- 
-services: 
-  rabbitmq: 
+version: "3.9"
+services:
+  rabbit1:
     image: rabbitmq:3-management
-    container_name: rabbitmq 
-    restart: always 
-    ports: 
-      - 5672:5672  # Porta para conexões do RabbitMQ 
-      - 15672:15672  # Porta para a interface de gerenciamento 
-    volumes: 
-      - ./data/rabbitmq:/var/lib/rabbitmq/mnesia  # Persistência de dados 
-    environment: 
-      - RABBITMQ_DEFAULT_USER=rodrigo # Usuário padrão 
-      - RABBITMQ_DEFAULT_PASS=1312 # Senha padrãpp
+    container_name: rabbit1
+    hostname: rabbit1
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS}
+      RABBITMQ_ERLANG_COOKIE: "secret_cookie"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbit1_data:/var/lib/rabbitmq
+    networks:
+      - rabbit_network
+
+  rabbit2:
+    image: rabbitmq:3-management
+    container_name: rabbit2
+    hostname: rabbit2
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS}
+      RABBITMQ_ERLANG_COOKIE: "secret_cookie"
+    ports:
+      - "15673:15672"
+    volumes:
+      - rabbit2_data:/var/lib/rabbitmq
+    networks:
+      - rabbit_network
+
+  rabbit3:
+    image: rabbitmq:3-management
+    container_name: rabbit3
+    hostname: rabbit3
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS}
+      RABBITMQ_ERLANG_COOKIE: "secret_cookie"
+    ports:
+      - "15674:15672"
+    volumes:
+      - rabbit3_data:/var/lib/rabbitmq
+    networks:
+      - rabbit_network
+
+volumes:
+  rabbit1_data:
+  rabbit2_data:
+  rabbit3_data:
+
+networks:
+  rabbit_network:
+    driver: bridge
